@@ -68,8 +68,4 @@ npm install -g lighthouse
   },
   "elapsedBuildTime": "17.304"
 }
-
-
-
-
-#
+```
