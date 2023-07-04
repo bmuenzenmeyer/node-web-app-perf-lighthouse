@@ -2,31 +2,31 @@ import { execSync, spawn } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { hrtime } from 'node:process';
 
-const exec = command => execSync(command, { encoding: 'utf-8' });
+const exec = (command) => execSync(command, { encoding: 'utf-8' });
 
-/* TODO: MAKE ENV OR ARGS */
+/* TODO: MAKE ENV */
 const HOST = 'http://localhost';
 const PORT = 3000;
 const PATH = '/en';
 const VERBOSE = true;
 const INSTALL = true;
-const FILESIZE = false;
+const FILESIZE = true;
 const WRITE = true;
 const SLEEP = 10000;
 
-const log = msg => {
+const log = (msg) => {
   if (VERBOSE) {
     console.log(msg);
   }
 };
 
-const sleep = ms => {
-  return new Promise(resolve => {
+const sleep = (ms) => {
+  return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 };
 
-const parseHrtimeToSeconds = hrtime => {
+const parseHrtimeToSeconds = (hrtime) => {
   const seconds = (hrtime[0] + hrtime[1] / 1e9).toFixed(3);
   return seconds;
 };
@@ -91,7 +91,7 @@ if (INSTALL) {
 log('starting app... check if this is the right command');
 const devServerProcess = spawn('npm', ['run serve'], { shell: true });
 
-devServerProcess.on('error', err => {
+devServerProcess.on('error', (err) => {
   console.error(err);
 });
 
@@ -120,7 +120,7 @@ const lighthouseTests = [
 
 const lightHouseTestResults = {};
 
-lighthouseTests.forEach(test => {
+lighthouseTests.forEach((test) => {
   const result = lighthouseResults.audits[test];
   log(`${test}...`);
   log(result.displayValue);
@@ -140,7 +140,7 @@ const diagnosticProperties = [
 
 const diagnosticPropertyResults = {};
 
-diagnosticProperties.forEach(diag => {
+diagnosticProperties.forEach((diag) => {
   const result = lighthouseDiagnostics[diag];
   log(`${diag}...`);
   log(result);
