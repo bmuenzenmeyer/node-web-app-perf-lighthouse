@@ -1,6 +1,6 @@
 {
   "name": "web-app-perf-lighthouse",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A script to run your local web app and yield developer experience and user performance data",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
