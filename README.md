@@ -1,5 +1,6 @@
 # node-web-app-perf-lighthouse
-A script to run your local web app and yield developer experience and user performance data 
+
+A script to run your local web app and yield developer experience and user performance data
 
 This script is a drop in to perform the following in most Node.js based-web apps:
 
@@ -15,27 +16,21 @@ This script is a drop in to perform the following in most Node.js based-web apps
 
 ## Installation
 
-1. Install lighthouse globally.
-
-```
-npm install -g lighthouse
-```
-
-2. Drop `audit.mjs` into your web app.
+1. Drop `audit.mjs` into your web app.
 
 ## Usage
 
-1. Confgiure the constants at the top of the file:
-    ```js
-    const HOST = 'http://localhost';
-    const PORT = ':3000';
-    const PATH = '/en';
-    const VERBOSE = true;
-    const INSTALL = true;
-    const FILESIZE = true;
-    const WRITE = true;
-    const SLEEP = 10000;
-    ```
+1. Configure the constants at the top of the file:
+   ```js
+   const HOST = 'http://localhost';
+   const PORT = ':3000';
+   const PATH = '/en';
+   const VERBOSE = true;
+   const INSTALL = true;
+   const FILESIZE = true;
+   const WRITE = true;
+   const SLEEP = 10000;
+   ```
 1. Run `node audit.mjs`
 1. Review `./audit-report.json`
 
@@ -43,29 +38,31 @@ npm install -g lighthouse
 
 ```json
 {
-  "vulnerabilities": 0,
-  "prodNodeModulesCount": 432,
-  "allNodeModulesCount": 2309,
-  "installTimeResult": "44s",
+  "vulnerabilities": 22,
+  "prodNodeModulesCount": 233,
+  "prodNodeModulesSize": "40M",
+  "allNodeModulesCount": 728,
+  "allNodeModulesSize": "130M",
+  "installTimeResult": "7s",
   "lightHouseTestResults": {
-    "first-contentful-paint": "0.9 s",
-    "largest-contentful-paint": "15.1 s",
-    "first-meaningful-paint": "0.9 s",
-    "speed-index": "9.2 s",
-    "total-blocking-time": "1,230 ms",
-    "max-potential-fid": "1,350 ms",
-    "cumulative-layout-shift": "0.005",
-    "interactive": "14.9 s",
-    "server-response-time": "Root document took 5,580 ms",
-    "bootup-time": "1.7 s"
+    "first-contentful-paint": "2.3 s",
+    "largest-contentful-paint": "2.3 s",
+    "first-meaningful-paint": "2.3 s",
+    "speed-index": "2.3 s",
+    "total-blocking-time": "0 ms",
+    "max-potential-fid": "20 ms",
+    "cumulative-layout-shift": "0.041",
+    "interactive": "2.3 s",
+    "server-response-time": "Root document took 10 ms",
+    "bootup-time": "0.1 s"
   },
   "diagnosticPropertyResults": {
-    "numRequests": 22,
-    "numScripts": 9,
-    "numStylesheets": 1,
-    "numFonts": 2,
-    "totalByteWeight": 2270185
+    "numRequests": 12,
+    "numScripts": 3,
+    "numStylesheets": 3,
+    "numFonts": 1,
+    "totalByteWeight": 75421
   },
-  "elapsedBuildTime": "17.304"
+  "elapsedBuildTime": "9.873"
 }
 ```
