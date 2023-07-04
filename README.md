@@ -11,7 +11,7 @@ This script is a drop in to perform the following in most Node.js based-web apps
 - reports diagnostic data like the number of request, total bytes, etc
 - measures the build time of the app using `npm run build`
 
-
+> There seem to be a lot of tools that ALMOST do this, but a use case here is to run this vs different SHAs of your own site to compare results over time. No one metric tells the complete story, so be aware of the tradeoffs you make.
 
 ## Installation
 
