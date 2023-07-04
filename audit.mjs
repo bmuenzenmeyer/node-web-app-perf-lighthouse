@@ -174,7 +174,7 @@ const report = {
 };
 
 if (WRITE) {
-  writeFileSync(`./audit-report.json`, JSON.stringify(report));
+  writeFileSync(`./audit-report.json`, JSON.stringify(report, null, 2));
 }
 
 process.exit(0);
