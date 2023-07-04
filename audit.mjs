@@ -100,7 +100,7 @@ await sleep(SLEEP);
 
 log('running lighthouse...');
 exec(
-  `lighthouse ${HOST}:${PORT}${PATH} --output=json --output-path ./report.json --quiet`
+  `npx lighthouse ${HOST}:${PORT}${PATH} --output=json --output-path ./report.json --quiet`
 );
 
 const lighthouseResults = JSON.parse(readFileSync('./report.json'));
