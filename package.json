@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/bmuenzenmeyer/node-web-app-perf-lighthouse/issues"
   },
-  "homepage": "https://github.com/bmuenzenmeyer/node-web-app-perf-lighthouse#readme"
+  "homepage": "https://github.com/bmuenzenmeyer/node-web-app-perf-lighthouse#readme",
+  "devDependencies": {
+    "@changesets/cli": "2.26.2"
+  }
 }
