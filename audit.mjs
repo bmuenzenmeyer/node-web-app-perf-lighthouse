@@ -4,9 +4,9 @@ import { hrtime } from 'node:process';
 
 const exec = command => execSync(command, { encoding: 'utf-8' });
 
-/* TODO: MAKE ENV */
+/* TODO: MAKE ENV OR ARGS */
 const HOST = 'http://localhost';
-const PORT = ':3000';
+const PORT = 3000;
 const PATH = '/en';
 const VERBOSE = true;
 const INSTALL = true;
