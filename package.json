@@ -1,0 +1,23 @@
+{
+  "name": "web-app-perf-lighthouse",
+  "version": "0.0.1",
+  "description": "A script to run your local web app and yield developer experience and user performance data",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmuenzenmeyer/node-web-app-perf-lighthouse.git"
+  },
+  "keywords": [
+    "perf",
+    "lighthouse",
+    "node"
+  ],
+  "author": "Brian Muenzenmeyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bmuenzenmeyer/node-web-app-perf-lighthouse/issues"
+  },
+  "homepage": "https://github.com/bmuenzenmeyer/node-web-app-perf-lighthouse#readme"
+}
