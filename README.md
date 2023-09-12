@@ -29,7 +29,7 @@ This script is a drop in to perform the following in most Node.js based-web apps
    const INSTALL = true;
    const FILESIZE = true;
    const WRITE = true;
-   const SLEEP = 10000;
+   const MS_WAIT_BEFORE_LIGHTHOUSE = 10000;
    ```
 1. Run `node audit.mjs`
 1. Review `./audit-report.json`

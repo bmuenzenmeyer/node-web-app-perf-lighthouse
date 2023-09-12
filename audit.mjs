@@ -12,7 +12,7 @@ const VERBOSE = true;
 const INSTALL = true;
 const FILESIZE = true;
 const WRITE = true;
-const SLEEP = 10000;
+const MS_WAIT_BEFORE_LIGHTHOUSE = 10000;
 
 const log = (msg) => {
   if (VERBOSE) {
@@ -20,7 +20,7 @@ const log = (msg) => {
   }
 };
 
-const sleep = (ms) => {
+const MS_WAIT_BEFORE_LIGHTHOUSE = (ms) => {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
@@ -96,7 +96,7 @@ devServerProcess.on('error', (err) => {
 });
 
 log('waiting for app to start...');
-await sleep(SLEEP);
+await MS_WAIT_BEFORE_LIGHTHOUSE(MS_WAIT_BEFORE_LIGHTHOUSE);
 
 log('running lighthouse...');
 exec(
