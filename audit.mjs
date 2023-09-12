@@ -1,18 +1,18 @@
+import 'dotenv/config'
 import { execSync, spawn } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { hrtime } from 'node:process';
 
 const exec = (command) => execSync(command, { encoding: 'utf-8' });
 
-/* TODO: MAKE ENV */
-const HOST = 'http://localhost';
-const PORT = 3000;
-const PATH = '/en';
-const VERBOSE = true;
-const INSTALL = true;
-const FILESIZE = true;
-const WRITE = true;
-const MS_WAIT_BEFORE_LIGHTHOUSE = 10000;
+const HOST = process.env.HOST || 'http://localhost';
+const PORT = process.env.PORT || 3000;
+const PATH = process.env.PATH || '/en';
+const VERBOSE = process.env.VERBOSE || true;
+const INSTALL = process.env.INSTALL || true;
+const FILESIZE = process.env.FILESIZE || true;
+const WRITE = process.env.WRITE || true;
+const MS_WAIT_BEFORE_LIGHTHOUSE = process.env.MS_WAIT_BEFORE_LIGHTHOUSE || 10000;
 
 const log = (msg) => {
   if (VERBOSE) {
@@ -20,7 +20,7 @@ const log = (msg) => {
   }
 };
 
-const MS_WAIT_BEFORE_LIGHTHOUSE = (ms) => {
+const sleep = (ms) => {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
@@ -96,7 +96,7 @@ devServerProcess.on('error', (err) => {
 });
 
 log('waiting for app to start...');
-await MS_WAIT_BEFORE_LIGHTHOUSE(MS_WAIT_BEFORE_LIGHTHOUSE);
+await sleep(MS_WAIT_BEFORE_LIGHTHOUSE);
 
 log('running lighthouse...');
 exec(
