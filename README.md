@@ -20,16 +20,16 @@ This script is a drop in to perform the following in most Node.js based-web apps
 
 ## Usage
 
-1. Configure the constants at the top of the file:
-   ```js
-   const HOST = 'http://localhost';
-   const PORT = ':3000';
-   const PATH = '/en';
-   const VERBOSE = true;
-   const INSTALL = true;
-   const FILESIZE = true;
-   const WRITE = true;
-   const MS_WAIT_BEFORE_LIGHTHOUSE = 10000;
+1. Configure an `.env` file :
+   ```env
+   HOST = 'http://localhost'
+   PORT = ':3000'
+   PATH = '/en'
+   VERBOSE = true
+   INSTALL = true
+   FILESIZE = true
+   WRITE = true
+   MS_WAIT_BEFORE_LIGHTHOUSE = 10000
    ```
 1. Run `node audit.mjs`
 1. Review `./audit-report.json`
