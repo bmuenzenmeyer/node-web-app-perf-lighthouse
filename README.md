@@ -22,9 +22,9 @@ This script is a drop in to perform the following in most Node.js based-web apps
 
 1. Configure an `.env` file :
    ```env
-   HOST = 'http://localhost'
-   PORT = ':3000'
-   PATH = '/en'
+   LH_HOST = 'http://localhost'
+   LH_PORT = ':3000'
+   LH_PATH = '/en'
    VERBOSE = true
    INSTALL = true
    FILESIZE = true
@@ -32,37 +32,39 @@ This script is a drop in to perform the following in most Node.js based-web apps
    MS_WAIT_BEFORE_LIGHTHOUSE = 10000
    ```
 1. Run `node audit.mjs`
-1. Review `./audit-report.json`
+1. Review `./audit-report-{sha}.json`
 
 ## Sample Output:
 
 ```json
 {
-  "vulnerabilities": 22,
-  "prodNodeModulesCount": 233,
-  "prodNodeModulesSize": "40M",
-  "allNodeModulesCount": 728,
-  "allNodeModulesSize": "130M",
-  "installTimeResult": "7s",
+  "vulnerabilities": 0,
+  "prodNodeModulesCount": 458,
+  "prodNodeModulesSize": "432M",
+  "allNodeModulesCount": 2083,
+  "allNodeModulesSize": "799M",
+  "prodInstallTimeResult": "15s",
+  "installTimeResult": "32s",
   "lightHouseTestResults": {
-    "first-contentful-paint": "2.3 s",
-    "largest-contentful-paint": "2.3 s",
-    "first-meaningful-paint": "2.3 s",
-    "speed-index": "2.3 s",
-    "total-blocking-time": "0 ms",
-    "max-potential-fid": "20 ms",
-    "cumulative-layout-shift": "0.041",
-    "interactive": "2.3 s",
-    "server-response-time": "Root document took 10 ms",
-    "bootup-time": "0.1 s"
+    "first-contentful-paint": "0.8 s",
+    "largest-contentful-paint": "13.4 s",
+    "first-meaningful-paint": "0.8 s",
+    "speed-index": "11.3 s",
+    "total-blocking-time": "1,330 ms",
+    "max-potential-fid": "1,470 ms",
+    "cumulative-layout-shift": "0.005",
+    "interactive": "13.1 s",
+    "server-response-time": "Root document took 7,260 ms",
+    "bootup-time": "1.7 s"
   },
   "diagnosticPropertyResults": {
-    "numRequests": 12,
-    "numScripts": 3,
-    "numStylesheets": 3,
+    "numRequests": 18,
+    "numScripts": 8,
+    "numStylesheets": 1,
     "numFonts": 1,
-    "totalByteWeight": 75421
+    "totalByteWeight": 1955274
   },
-  "elapsedBuildTime": "9.873"
+  "elapsedBuildTime": "30.774",
+  "elapsedDeployTime": "58.139"
 }
 ```
